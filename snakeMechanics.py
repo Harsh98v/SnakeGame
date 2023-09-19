@@ -63,3 +63,11 @@ class Snake:
             pass
         else:
             self.head.setheading(0)
+            
+    def reset_snake(self):
+        for seg in self.all_segments:
+            seg.goto(1000, 1000)
+            
+        self.all_segments.clear()
+        self.create_snake()
+        self.head = self.all_segments[0]
